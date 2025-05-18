@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CV Bruno Oliveira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-card: #1A1A1A;
+            --text-primary: #F0F0F0;
+            --text-secondary: #A8A8A8;
+            --accent-glow: #DFFF00;
+            --border-color: #2A2A2A;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-container h1 {
+            color: var(--accent-glow);
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-container label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0.4rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 8px rgba(223, 255, 0, 0.3);
+        }
+        .login-container button {
+            width: 100%;
+            background-color: var(--accent-glow);
+            color: var(--bg-secondary);
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-size: 0.9rem;
+        }
+        .login-container button:hover {
+            background-color: var(--accent-darker);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div>
+                <label for="username">Utilizador</label>
+                <input type="text" id="username" name="username" value="bruno.oliveira" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+            // Simplesmente redireciona de volta para o CV
+            window.location.href = 'index.html#dashboard'; 
+        });
+    </script>
+</body>
+</html>
